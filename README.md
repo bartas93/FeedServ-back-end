@@ -1,5 +1,4 @@
-# FeedServ-back-end
-Spring boot 1.5.8 app
+An application written in Spring Boot (all entities, relationships and order managment module was implemented):
 
 To run this app:
 1. Create database in MySql named feedserv (port 3306)
