@@ -1,0 +1,622 @@
+INSERT INTO address_entity (country, city, post_code, street, street_number) VALUES ("Polska", "Wrocław", "50-440", "Kościuszki", "147");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number, comments) VALUES ("Polska", "Wrocław", "50-440", "Pradzyńskiego", "42", "6", "Drugie piętro, drzwi po prawej.");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number, comments) VALUES ("Polska", "Wrocław", "50-440", "Hallera", "33", "21", "Drugie piętro, drzwi po prawej.");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number) VALUES ("Polska", "Wrocław", "50-440", "Traugatta", "12", "2a");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number, floor) VALUES ("Polska", "Wrocław", "50-440", "Grunwaldzka", "1", "22", "5");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number, floor) VALUES ("Polska", "Wrocław", "50-440", "Pocztowa", "47","33", "drugie");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number, floor) VALUES ("Polska", "Wrocław", "50-440", "Browarna", "2","8", "3");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number, floor) VALUES ("Polska", "Wrocław", "50-440", "Przyjazni", "7","5", "6");
+INSERT INTO address_entity (country, city, post_code, street, street_number, local_number, floor) VALUES ("Polska", "Wrocław", "50-440", "Czekoladowa", "147","2", "1");
+
+INSERT INTO restaurant_entity (name, description, owner_name, phone_number, email, address_id) VALUES ("Gruby benek Wroclaw", "Gruby Benek Wrocław - królewska Pizza, Pizza, czyli połączenie wykwintnego ciasta z sosem pomidorowym i starannie dobranymi dodatkami, to nasza specjalność.", "Właściciel Właścicielowski", "71 707 04 07", "wroclaw@grubybenek.pl", 1);
+
+INSERT INTO role_entity (name, description) VALUES ("MANAGER","Manager of restaurant");
+INSERT INTO role_entity (name, description) VALUES ("STAFF","Staff can receive orders and check customer infos");
+INSERT INTO role_entity (name, description) VALUES ("DRIVER","Driver who delivers food");
+
+INSERT INTO employee_entity (email,pesel, birth_date, father_first_name, father_last_name, id_of_personal_document, mother_first_name, mother_last_name, full_name, image_url, is_active, password, phone_number, remember_me, address_id, restaurant_id, is_online) VALUES ("jablonski.bartosz93@gmail.com", "93102909012", "1993-10-29", "Miroslaw", "Jablonski", "AUJ55323", "Andzhella", "Iliagujewa", "Bartosz Jabłoński", "https://static.goldenline.pl/user_photo/187/user_4767163_5d3763_huge.jpg", 1, "$2a$04$6Jc7z36Zm8jWuR3z1Cn.iOaX4oQ7OtKmKKNCt3BPe0XskM1hIHtU2", "795933211", 1, 2, 1,1);
+INSERT INTO employee_entity (full_name, password, email, phone_number, is_active, image_url, remember_me, restaurant_id, is_online) VALUES ("Artur Majerczyk", "$2a$10$QuG.AyIiG60J1ey9XcQh.ODLi6SLpW9nI3h5U4Wuc2YNT/7nbJAqu","manager@manager", "982982231", 1, "http://a57.foxnews.com/images.foxnews.com/content/fox-news/person/c/steve-cortes/_jcr_content/image.img.jpg/256/256/1502138348962.jpg",1,1, 1);
+INSERT INTO employee_entity (full_name, password, email, phone_number, is_active, image_url, remember_me, restaurant_id, is_online) VALUES ("Szymon Augustyn", "$2a$10$PFXcDX9neaXInbydUuG9dubpyHTc38vNEW.jO8kLOpQVBU2h2Eh4q ","staff@staff", "972252382", 1,"https://pbs.twimg.com/profile_images/378800000371102492/f2d2889625ef9a5298afe2251bcc8287.jpeg",1,1, 1);
+INSERT INTO employee_entity (full_name, password, email, phone_number, is_active, image_url, remember_me, restaurant_id, is_online) VALUES ("Małgorzata Śledzik", "$2a$10$JK2JxSfLRzstiMOWqXMb.uHcS8vX4kRjKRBo6dtQ.hTdfsmi3zefe","driver@driver", "794333222", 1, "http://kolegia.sgh.waw.pl/pl/KZiF/struktura/IZ/struktura/ZBZK/zaklad/sklad/Documents/malgorzata_bombol.jpg",1,1, 1);
+
+INSERT INTO employee_role_entity (rate, salary_type, employee_id, restaurant_id, role_id) VALUES ("12.5","HOURLY_PAYMENT",1,1,1);
+INSERT INTO employee_role_entity (rate, salary_type, employee_id, restaurant_id, role_id) VALUES ("12.5","HOURLY_PAYMENT",1,1,2);
+INSERT INTO employee_role_entity (rate, salary_type, employee_id, restaurant_id, role_id) VALUES ("4000","MONTHLY_PAYMENT",2,1,1);
+INSERT INTO employee_role_entity (rate, salary_type, employee_id, restaurant_id, role_id) VALUES ("12.5","HOURLY_PAYMENT",3,1,2);
+INSERT INTO employee_role_entity (rate, salary_type, employee_id, restaurant_id, role_id) VALUES ("0.5","COMMISION",4,1,3);
+
+
+INSERT INTO partner_entity (client_number, description, email, name, phone_number, restaurant_id) VALUES ("2321Aw3", "Pyszne.pl - portal łączący klientów i restauracje", "kontakt@pysznne.pl", "Pyszne.pl", "666555444", 1);
+INSERT INTO partner_entity (client_number, description, email, name, phone_number, restaurant_id) VALUES ("Awf2123", "PizzaPortaal.pl - portal łączący klientów i restauracje", "kontakt@pizzaportal.pl", "PizzaPortal.pl", "223322123", 1);
+INSERT INTO partner_entity (client_number, description, email, name, phone_number, restaurant_id) VALUES ("nr2333", "Skubacz.pl - portal łączący klientów i restauracje", "kontakt@skubacz.pl", "Skubacz.pl", "111222333", 1);
+
+INSERT INTO customer_entity (is_on_black_list, description, email, name, phone_number) VALUES (0, "Zaopatrzeniowiec - ma dostep do towar", "artur.majerski@gmail.com","Artur Majerski","+48999000999");
+INSERT INTO customer_entity (is_on_black_list, phone_number) VALUES (0, "+48111222111");
+INSERT INTO customer_entity (is_on_black_list, phone_number) VALUES (0, "123456789");
+INSERT INTO customer_entity (is_on_black_list, phone_number) VALUES (0, "987654321");
+INSERT INTO customer_entity (is_on_black_list, phone_number) VALUES (0, "992857293");
+INSERT INTO customer_entity (is_on_black_list, phone_number) VALUES (0, "659384759");
+INSERT INTO customer_entity (is_on_black_list, phone_number) VALUES (0, "632102938");
+
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (1,1);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (2,1);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (3,2);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (4,3);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (5,4);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (6,4);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (7,5);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (8,6);
+INSERT INTO addressers_customers (address_id, customer_id) VALUES (9,7);
+
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ciasto GB", "ciasto", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Sos pomidorowy GB", "sos", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ser mozzarella cheddar", "ser", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Czosnek", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Kebab drobiowy", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Kebab wołowy z belki GB", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Pomidor", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Brokuły", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Salami konecke", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Szynka konserwowa", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ser wędzony", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Kabanos", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Tabasco", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Oregano", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Pieczarki", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ananas", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ser pleśniowy", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ogórek konserwowy", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Kurczak wędzony", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Papryka konserwowa", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Oliwki", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Boczek", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Cebula", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Groszek", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ser Typu greckiego", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Papryka peperoni", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Kukurydza", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Szczypiorek", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Papryka jalapeno", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Aloes 0,5L", "inne","PIECE", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("CocaCola 1L", "inne","PIECE", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("CocaCola 0,5L", "inne","PIECE", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Fanta 1L", "inne","PIECE", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Fanta 0,5L", "inne","PIECE", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Piwo Pilsner 0,5L", "inne","PIECE", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Sos czosnkowy", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Czosnek", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Jogurt naturalny", "inne", "MILILITER", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Majonez", "inne", "MILILITER", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Bazylia", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Cukier", "inne", "GRAM", 1);
+INSERT INTO dictionary_product_entity (name, image_url, unit, restaurant_id) VALUES ("Ciasto cienkie", "inne", "GRAM", 1);
+
+INSERT INTO complex_product_creation_entity (complex_product_id, simple_product_id, simple_product_quantity_to_make1000units_of_complex) VALUES (36, 37, "50");
+INSERT INTO complex_product_creation_entity (complex_product_id, simple_product_id, simple_product_quantity_to_make1000units_of_complex) VALUES (36, 38, "400");
+INSERT INTO complex_product_creation_entity (complex_product_id, simple_product_id, simple_product_quantity_to_make1000units_of_complex) VALUES (36, 39, "450");
+INSERT INTO complex_product_creation_entity (complex_product_id, simple_product_id, simple_product_quantity_to_make1000units_of_complex) VALUES (36, 40, "50");
+INSERT INTO complex_product_creation_entity (complex_product_id, simple_product_id, simple_product_quantity_to_make1000units_of_complex) VALUES (36, 41, "50");
+--INVENTORY
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("1", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("2", "1", "6000", "1000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("3", "1", "6000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("4", "1", "300", "50");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("5", "1", "2000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("6", "1", "3000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("7", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("8", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("9", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("10", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("11", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("12", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("13", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("14", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("15", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("16", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("17", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("18", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("19", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("20", "1", "200", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("21", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("22", "1", "0", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("23", "1", "20000", "500");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("24", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("25", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("26", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("27", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("28", "1", "20000", "2000");
+INSERT INTO inventory_product_entity (dictionary_product_id, restaurant_id, quantity_in_units, min_quantity_in_units_to_alert) VALUES ("29", "1", "20000", "2000");
+
+INSERT INTO dish_type_entity (name, image_url, restaurant_id) VALUES ("Pizza", "restaurant_1/dish_type/Pizza.png", 1);
+INSERT INTO dish_type_entity (name, image_url, restaurant_id) VALUES ("Tortilla", "restaurant_1/dish_type/Tortilla.png", 1);
+INSERT INTO dish_type_entity (name, image_url, restaurant_id) VALUES ("Sałatki", "restaurant_1/dish_type/Sałatki.png", 1);
+INSERT INTO dish_type_entity (name, image_url, restaurant_id) VALUES ("Napoje", "restaurant_1/dish_type/Napoje.png", 1);
+
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("Mała 22cm", 1,1);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("Średnia 30cm",1,1);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("Duża 40cm", 1,1);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("Mega wypas 40cm (składniki x2)", 1,1);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("standard",1, 2);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("standard",1, 3);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("0,2 litra",1, 4);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("0,5 litra",1, 4);
+INSERT INTO dish_largeness_entity (name, restaurant_id, dish_type_id) VALUES ("1 litr",1, 4);
+
+--INSERT INTO group_of_changeable_products_entity (name, dish_type_id, max_changeable_products_quantity, restaurant_id) VALUES ("Sos na spód", 1, 1, 1);
+--INSERT INTO group_of_changeable_products_entity (name, dish_type_id, restaurant_id) VALUES ("Dodatki na pizze", 1, 1);
+--  --SOSY DO PIZZY                        
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (2, "100");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (2, "200");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (2, "300");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (2, "400");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (36, "100");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (36, "200");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (36, "300");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (36, "400");
+----CIASTA DO PIZZY
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (1, "200");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (1, "250");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (1, "300");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (1, "350");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (42, "200");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (42, "250");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (42, "300");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (42, "350");
+----DODATKI DO PIZZY
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (3, "100");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (3, "130");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (3, "150");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (3, "300");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (5, "20");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (5, "25");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (5, "30");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (5, "60");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (6, "20");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (6, "25");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (6, "30");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (6, "60");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (9, "20");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (9, "25");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (9, "30");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (9, "60");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (10, "20");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (10, "25");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (10, "30");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (10, "60");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (15, "50");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (15, "75");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (15, "100");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (15, "200");
+--INSERT INTO product_quantity_entity (dictionary_product_id, quantity_in_units) VALUES (40, "10");
+----SOSY
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 1, 1, "0");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 2, 2, "0");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 3, 3, "0");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 4, 4, "0");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 5, 1, "0");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 6, 2, "0");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 7, 3, "0");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (1, 8, 4, "0");
+----DODATKI
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 17, 1, "2.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 18, 2, "3.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 19, 3, "4.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 20, 4, "5.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 21, 1, "2.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 22, 2, "3.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 23, 3, "4.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 24, 4, "5.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 25, 1, "2.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 26, 2, "3.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 27, 3, "4.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 28, 4, "5.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 29, 1, "2.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 30, 2, "3.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 31, 3, "4.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 32, 4, "5.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 33, 1, "2.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 34, 2, "3.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 35, 3, "4.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 36, 4, "5.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 37, 1, "2.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 38, 2, "3.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 39, 3, "4.00");
+--INSERT INTO changeable_product_entity (group_of_changable_products_id, product_quantity_id, dish_largeness_id, additional_cost) VALUES (2, 40, 4, "5.00");
+
+--PIZZA                                                                                                                                   
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("GOŁY BENEK", "Sos pomidorowy na podkładzie, Ser, Oregano", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/1bb20d0ad46b24741e9e68e1c5a18a23.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 1, "12");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 2, "20");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 3, "27");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 4, "31");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("POPULARNY BENEK", "Sos pomidorowy na podkładzie, Ser, Oregano, Szynka, Pieczarki", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/9a9df2bab35a18bdf642739ede0ff9b7.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 1, "15");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 2, "24");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 3, "33");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 4, "39");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("BENEK NA WCZASACH", "Sos pomidorowy na podkładzie, Ser, Oregano, Szynka, Ananas", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/af59908d977ff1c1a818093499369bd6.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 1, "15");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 2, "24");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 3, "33");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 4, "39");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("BENEK MIĘSNY", "Sos pomidorowy na podkładzie, Ser, Oregano, Salami, Szynka, Kabanos, Boczek wędzony", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/0c018f923f26634b21d6d0a6ccbbf4a9.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 1, "18");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 2, "32");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 3, "41");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 4, "50");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("PERSKI BENEK", "Sos pomidorowy na podkładzie, Ser, Oregano, Papryka, Kebab drobiowy, Szczypiorek", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/1b64073f21940734c6486748adf6e97b.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 1, "16.50");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 2, "27");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 3, "36");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 4, "43");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("BENEK KIBIC", "Sos pomidorowy na podkładzie, Ser, Oregano, Salami, Pieczarki, Cebula, Boczek wędzony", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/ae404d1ac99fdfc9de71ad2942ad130c.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 1, "17.5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 2, "28.5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 3, "39");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 4, "46");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("WROCŁAWSKI BENEK", "Sos pomidorowy na podkładzie, Ser, Oregano, Papryka jalapeno, Kebab drobiowy, Extra ser, Cebula", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/1b64073f21940734c6486748adf6e97b.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (7, 1, "18");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (7, 2, "29");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (7, 3, "40");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (7, 4, "47");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("SEROWY BENEK", "Sos pomidorowy na podkładzie, Ser, Oregano, Ser wędzony, ser typu Feta, Ser pleśniowy, Biała mozzarella", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/11559aaebc3db39de4aab718766935da.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (8, 1, "18");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (8, 2, "30");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (8, 3, "43");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (8, 4, "51");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("PARMEŃSKI BENEK", "Sos pomidorowy na podkładzie, Ser, Oregano, Szynka dojrzewająca, Pomidor koktajlowy, Rukola, Parmezan", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/585928e8d56134479346a0deb16042ad.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (9, 1, "19");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (9, 2, "31");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (9, 3, "41");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (9, 4, "49");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("BENEK W ATENACH", "Sos pomidorowy na podkładzie, Ser, Oregano, Salami, ser typu Feta, Oliwki zielone, Pomidor, Papryka", 1, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/1b64073f21940734c6486748adf6e97b.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (10, 1, "19.5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (10, 2, "30.5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (10, 3, "43");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (10, 4, "52");
+--Tortilla
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("TORTILLA WIEPRZOWA", "Pszenny placek tortilli, wieprzowina, kapusta pekińska, pomidor, świeży ogórek, kukurydza", 2, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/439693ab675b57352fa28043f69a633e.jpg?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (11, 5, "16");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("TORTILLA DROBIOWA", "Pszenny placek tortilli, kebab drobiowy, kapusta pekińska, pomidor, świeży ogórek, kukurydza,", 2, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/439693ab675b57352fa28043f69a633e.jpg?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (12, 5, "16");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("TORTILLA Z ŁOSOSIEM", "Pszenny placek tortilli, łosoś wędzony, kapusta pekińska, pomidor koktajlowy, ser feta, sos miodowo - musztardowy", 2, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/439693ab675b57352fa28043f69a633e.jpg?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (13, 5, "16");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("TORTILLA ZE STRIPSAMI", "Pszenny placek tortilli, stripsy z kurczaka, kapusta pekińska, pomidor, ogórek świeży, kukurydza, sos do wyboru", 2, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/439693ab675b57352fa28043f69a633e.jpg?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (14, 5, "16");
+--SALATKI
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("GRECKA", "Chrupiące, zawsze świeże warzywa z dodatkami. Sałata lodowa, pomidory, świeży ogórek, świeża papryka, oliwki zielone i czarne, ser typu feta, sos vinegret.", 3, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/36d2bcf7626e151216d6b389ffffca95.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (15, 6, "20");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("Z KURCZAKIEM", "Chrupiące, zawsze świeże warzywa z dodatkami. Sałata lodowa, świeży ogórek, pomidory, kukurydza, fasola czerwona, kebab drobiowy, sos vinegret lub czosnkowy.", 3, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/36d2bcf7626e151216d6b389ffffca95.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (16, 6, "20");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("Z TUŃCZYKIEM", "Chrupiące, zawsze świeże warzywa z dodatkami. Sałata lodowa, świeży ogórek, kukurydza, cebula, tuńczyk, majonez", 3, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/36d2bcf7626e151216d6b389ffffca95.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (17, 6, "20");
+INSERT INTO menu_item_entity (name, description, dish_type_id, restaurant_id, image_url) VALUES ("Z ŁOSOSIEM", "Chrupiące, zawsze świeże warzywa z dodatkami. Łosoś wędzony, chrupiąca sałata lodowa, pomidor koktajlowy, ser feta, sos miodowo - musztardowy", 3, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/36d2bcf7626e151216d6b389ffffca95.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (18, 6, "20");
+--Napoje
+INSERT INTO menu_item_entity (name, dish_type_id, restaurant_id, image_url) VALUES ("PEPSI",  4, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/0f410996fca4841cb5e6f14cc01a2af4.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (19, 7, "3");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (19, 8, "5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (19, 9, "7");
+INSERT INTO menu_item_entity (name, dish_type_id, restaurant_id, image_url) VALUES ("MIRINDA",  4, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/56320441fa9f929d6486994957edf5b6.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (20, 7, "3");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (20, 8, "5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (20, 9, "7");
+INSERT INTO menu_item_entity (name, dish_type_id, restaurant_id, image_url) VALUES ("7-UP",  4, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/d81903a394be3c5358289c7577360a5a.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (21, 7, "3");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (21, 8, "5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (21, 9, "7");
+INSERT INTO menu_item_entity (name, dish_type_id, restaurant_id, image_url) VALUES ("LIPTON",  4, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/354ba391b89ccd455c5fc6476b6a5ac7.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (22, 7, "3");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (22, 8, "5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (22, 9, "7");
+INSERT INTO menu_item_entity (name, dish_type_id, restaurant_id, image_url) VALUES ("TOMA",  4, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/bb928481861b3f6d53b1dbdce058f3dd.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (23, 7, "3");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (23, 8, "5");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (23, 9, "7");
+INSERT INTO menu_item_entity (name, dish_type_id, restaurant_id, image_url) VALUES ("WODA MINERALNA",  4, 1, "https://restaumatic.imgix.net/uploads/sites/1250/media_library/050471af966b260512b4ed98da6dd36c.png?auto=compress&crop=focalpoint");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (24, 7, "2");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (24, 8, "4");
+INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (24, 9, "6");
+--DO USUNIECIA!!
+
+
+
+
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 1, "12");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 2, "20");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 3, "27");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (1, 4, "31");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 1, "15");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 2, "24");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 3, "33");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (2, 4, "39");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 1, "17.50");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 2, "28");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 3, "39");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (3, 4, "45");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 1, "15");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 2, "24");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 3, "33");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (4, 4, "39");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 1, "18");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 2, "32");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 3, "41");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (5, 4, "50");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 1, "16.50");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 2, "27");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 3, "36");
+--INSERT INTO menu_item_dish_largeness_entity (menu_item_id, dish_largeness_id, cost) VALUES (6, 4, "43");
+-- NIEZMIENNY SKLADNIK - Chyba ciasto dodalem?!
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (1, 9);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (2, 10);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (3, 11);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (4, 12);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (5, 9);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (6, 10);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (7, 11);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (8, 12);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (9, 9);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (10, 10);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (11, 11);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (12, 12);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (13, 9);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (14, 10);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (15, 11);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (16, 12);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (17, 9);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (18, 10);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (19, 11);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (20, 12);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (21, 13);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (22, 14);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (23, 15);
+--INSERT INTO unchangeable_products_entity (menu_item_dish_largeness_id, product_quantity_id) VALUES (24, 16);
+
+----Grupa polaczona z wszystkimi pizzami i ich rozmiarami ( Czyli np. sos do pizzy pierwszej małej)
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (1,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (2,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (3,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (4,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (5,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (6,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (7,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (8,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (9,  1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (10, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (11, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (12, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (13, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (14, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (15, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (16, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (17, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (18, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (19, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (20, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (21, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (22, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (23, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (24, 1);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (1,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (2,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (3,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (4,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (5,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (6,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (7,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (8,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (9,  2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (10, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (11, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (12, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (13, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (14, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (15, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (16, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (17, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (18, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (19, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (20, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (21, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (22, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (23, 2);
+--INSERT INTO menu_item_group_of_changeable_products_entity (menu_item_dish_largeness_id, group_of_changable_products_id) VALUES (24, 2);
+--
+----SOSY Wszedzie pomidorowy
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (1, 1);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (2, 2);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (3, 3);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (4, 4);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (5, 1);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (6, 2);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (7, 3);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (8, 4);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (9, 1);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (10, 2);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (11, 3);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (12, 4);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (13, 1);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (14, 2);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (15, 3);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (16, 4);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (17, 1);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (18, 2);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (19, 3);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (20, 4);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (21, 1);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (22, 2);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (23, 3);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (24, 4);
+
+----TOPPINGS
+----PIERWSZA PIZZA
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (25, 9);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (26, 10);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (27, 11);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (28, 12);
+----DRUGA PIZZA
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (29, 9);  
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (30, 10); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (31, 11); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (32, 12); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (29, 29);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (30, 30);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (31, 31);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (32, 32);
+----TRZECIA PIZZA
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (33,9);  
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (34,10); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (35,11); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (36,12); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (33, 29);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (34, 30);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (35, 31);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (36, 32);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (33, 21);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (34, 22);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (35, 23);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (36, 24);
+----CZWARTA PIZZA
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (37, 9);  
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (38, 10); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (39, 11); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (40, 12); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (37, 13);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (38, 14);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (39, 15);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (40, 16);
+----PIATA PIZZA
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (41, 9);  
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (42, 10); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (43, 11); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (44, 12); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (41, 17);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (42, 18);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (43, 19);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (44, 20);
+----SZOSTA PIZZA
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (45, 9);  
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (46, 10); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (47, 11); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (48, 12); 
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (45, 29);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (46, 30);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (47, 31);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (48, 32);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (45, 25);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (46, 26);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (47, 27);
+--INSERT INTO default_changeable_product_entity (menu_item_group_of_changeable_products_id, changeable_product_id) VALUES (48, 28);
+
+--PROMOTIONS
+INSERT INTO promotion_entity (restaurant_id, promotion_type, rate, start_date, end_date) VALUES (1, "MONEY_DISCOUNT", "3.50","2018-01-04","2018-01-23");
+INSERT INTO promotion_entity (restaurant_id,  promotion_type, rate, start_date, end_date) VALUES (1, "MONEY_DISCOUNT", "5.50","2018-01-04","2018-01-29");
+
+--ORDER W LOKALU
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CASH",  "AT_THE_CUSTOMER", "LOCAL", "2018-01-23 00:01:01", "2018-01-23 00:15:01", 1, "68");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  1,  8, "39", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  1,  46, "20", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  1,  62, "5", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  1,  65, "4", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CARD",  "AT_THE_CUSTOMER", "LOCAL", "2018-01-23 00:28:01", "2018-01-23 00:50:01", 1, "50");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  2,  20, "43", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  2,  63, "7", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CASH",  "AT_THE_CUSTOMER", "LOCAL", "2018-01-23 10:20:01", "2018-01-23 10:27:20", 1, "20");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  3,  47, "20", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CARD",  "AT_THE_CUSTOMER", "LOCAL", "2018-01-23 10:28:01", "2018-01-23 11:05:01", 1, "78");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  4,  14, "32", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  4,  24, "46", 1);
+--ORDER W LOKALU AKTUALNY
+INSERT INTO order_entity (restaurant_id, received_by_employee_id,  order_status, order_location_type, received_time, is_completed) VALUES (1, 3, "QUALITY_CHECKING", "LOCAL", "2018-01-23 10:00:01", 0);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  5,  19, "36", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  5,  29, "18", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  5,  34, "31", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id,  order_status, order_location_type, received_time, is_completed) VALUES (1, 3, "IN_KITCHEN", "LOCAL", "2018-01-23 09:55:01",0 );
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  6,  32, "51", 0);
+--ORDER W TAKEAWAY
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CASH",  "AT_THE_CUSTOMER", "TAKEAWAY", "2018-01-23 00:11:01", "2018-01-23 00:25:01", 1, "62");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  7,  24, "46", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  7,  44, "16", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CARD",  "AT_THE_CUSTOMER", "TAKEAWAY", "2018-01-23 01:21:01", "2018-01-23 00:40:01", 1, "39");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  8,  8, "39", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CASH",  "AT_THE_CUSTOMER", "TAKEAWAY", "2018-01-23 01:50:01", "2018-01-23 00:55:01", 1, "20");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  9,  47, "20", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, is_completed, paid_amount) VALUES (1, 3, "CARD",  "AT_THE_CUSTOMER", "TAKEAWAY", "2018-01-23 02:00:01",  "2018-01-23 02:30:01",1, "94");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  10,  28, "47", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  10,  28, "47", 1);
+--ORDER W TAKEAWAY AKTUALNY
+INSERT INTO order_entity (restaurant_id, received_by_employee_id,  order_status, order_location_type, received_time, is_completed,comment) VALUES (1, 3,  "ORDER_RECEIVED_IN_RESTAURANT", "TAKEAWAY", "2018-01-23 09:31:01",0, "Jeśli zamówienie będzie gotowe prosze zadzwonić 792 221 111");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  11,  30, "30", 0);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id,  order_status, order_location_type, received_time, is_completed) VALUES (1, 3,  "IN_KITCHEN", "TAKEAWAY", "2018-01-23 09:55:01",0);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  12,  20, "43", 0);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  12,  24, "46", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  12,  60, "7", 0);
+--ORDER W DOWOZIE
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, driver_employee_id, delivery_group, address_id, customer_id, partner_id, is_completed, paid_amount) VALUES (1, 3, "BANK_TRANSFER",  "AT_THE_CUSTOMER", "DELIVERY", "2018-01-23 00:05:01", "2018-01-23 00:59:01", 4, 1, 1, 1, 1, 1, "52");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  13,  40, "52", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, driver_employee_id, delivery_group, address_id, customer_id, partner_id, is_completed, paid_amount) VALUES (1, 3, "CARD",  "AT_THE_CUSTOMER", "DELIVERY", "2018-01-23 00:10:01", "2018-01-23 01:10:01", 4, 1, 3, 2, 2, 1, "55.5");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  14,  48, "20", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  14,  42, "16", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  14,  37, "19.5", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, driver_employee_id, delivery_group, address_id, customer_id, is_completed, paid_amount) VALUES (1, 3, "BANK_TRANSFER",  "CANCELED_AND_LOST", "DELIVERY", "2018-01-23 01:04:01", "2018-01-23 01:55:01", 4, 2, 4, 3, 1, "31");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  15,  4, "31", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, payment_time, driver_employee_id, delivery_group, address_id, customer_id, partner_id, is_completed, paid_amount) VALUES (1, 3, "BANK_TRANSFER",  "CANCELED", "DELIVERY", "2018-01-23 01:44:01", "2018-01-23 02:30:01", 4, 2, 6, 4, 3, 1, "39");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  16,  8, "39", 1);
+--ORDER W DOWOZIE AKTUALNY
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, driver_employee_id, delivery_group, address_id, customer_id, partner_id, is_completed, comment, paid_amount) VALUES (1, 3, "BANK_TRANSFER",  "DELIVERY", "DELIVERY", "2018-01-23 13:44:01", 4, 3, 6, 4, 3, 0, "Jeśli posiadacie w swojej karcie jeszcze tapas to prosze dodac x2", "31");
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  17,  8, "39", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  17,  4, "31", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, driver_employee_id, delivery_group, address_id, customer_id, is_completed) VALUES (1, 3, "CASH",  "DELIVERY", "DELIVERY", "2018-01-23 10:00:01", 4, 3, 2, 1, 0);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  18,  40, "52", 1);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  18,  37, "19.5", 1);
+INSERT INTO order_entity (restaurant_id, received_by_employee_id, payment_method,  order_status, order_location_type, received_time, driver_employee_id, delivery_group, address_id, customer_id, partner_id, is_completed) VALUES (1, 3, "CARD",  "IN_KITCHEN", "DELIVERY", "2018-01-23 10:10:01", 4, 4, 3, 2, 1, 0);
+INSERT INTO order_item_entity (restaurant_id, order_id, menu_item_dish_largeness_id, total_cost_with_additional_products, is_cooked) VALUES (1,  19,  24, "46", 0);
+
+----ORDER_ITEMS:
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  1,  1, "12", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  16,  6, "31", 0);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  1, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  2, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  3, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  4, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  5, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  24,  5, "43", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  6, "31", 0);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  7, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  8, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  9, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  10, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  11, "31", 0);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  12, "31", 0);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  13, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  14, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  15, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  16, "31", 0);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  17, "31", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  7,  18, "41", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  10,  18, "28", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  13,  18, "15", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  20,  18, "50", 1);
+--INSERT INTO order_item_entity (restaurant_id, menu_item_dish_largeness_id, order_id,  total_cost_with_additional_products, is_cooked) VALUES (1,  4,  19, "31", 0);
+--                                                                                                                                              
+---- CHANGES IN ORDER ITEM
+--INSERT INTO changes_in_order_item_entity (order_item_id, group_of_changeable_products_id) VALUES (21, 2);
+--INSERT INTO changes_in_order_item_entity (order_item_id, group_of_changeable_products_id) VALUES (3, 2);
+--
+----ADDED PRODUCT IN CHANGES ORDER ITEM
+--INSERT INTO added_products (changes_in_order_item_id, changeable_product_id) VALUES (1, 19);
+--INSERT INTO added_products (changes_in_order_item_id, changeable_product_id) VALUES (1, 23);
+--INSERT INTO added_products (changes_in_order_item_id, changeable_product_id) VALUES (2, 24);
+--
+----REMOVED PRODUCT IN CHANGES ORDER ITEM
+--INSERT INTO removed_products (changes_in_order_item_id, changeable_product_id) VALUES (1, 11);
+
+
+--SHOW COLUMNS FROM fixed_cost_entity FROM feedserv;
+--SHOW COLUMNS FROM variable_cost_entity FROM feedserv;
+--SHOW COLUMNS FROM safe_entity FROM feedserv;
+--SHOW COLUMNS FROM salary_entity FROM feedserv;
+--SHOW COLUMNS FROM working_time_entity FROM feedserv;
+--SHOW COLUMNS FROM supplier_entity FROM feedserv;
+--SHOW COLUMNS FROM purchase_entity FROM feedserv;
+--SHOW COLUMNS FROM purchase_item_entity FROM feedserv;
