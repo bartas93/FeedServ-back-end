@@ -1,5 +1,5 @@
 Back-end application for managing a restaurant.
-        Spring boot 1.5.8, JWT, Spring Date, Spring Security, MySql
+        Used Technologies: Spring boot 1.5.8, JWT, Spring Date, Spring Security, MySql
 
 Architecture (Packages, entites, relationships) - implemented. 
 First module - order managment - implemented.
