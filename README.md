@@ -1,4 +1,8 @@
-An application written in Spring Boot (all entities, relationships and order managment module was implemented):
+Back-end application for managing a restaurant.
+        Spring boot 1.5.8, JWT, Spring Date, Spring Security, MySql
+
+Architecture (Packages, entites, relationships) - implemented. 
+First module - order managment - implemented.
 
 To run this app:
 1. Create database in MySql named feedserv (port 3306)
